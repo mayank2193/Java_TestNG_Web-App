@@ -1,4 +1,4 @@
-# Java TestNG Selenium 
+# Java TestNG Selenium & Appium
 
 ### Environment Setup
 
@@ -6,13 +6,13 @@
     * Install [Maven](https://maven.apache.org/install.html)
     * Or Install Maven with [Homebrew](http://brew.sh/) (Easier)
     ```
-    $ install maven
+    $ mvn install
     ```
 2. Project Dependencies
     * checkout the repository
     * Check that packages are available
     ```
-    $ cd Java-TestNG-Selenium
+    $ cd Java_TestNG_Web-App
     ```
     * You may also want to run the command below to check for outdated dependencies. Please be sure to verify and review updates before editing your pom.xml file as they may not be compatible with your code.
     ```
@@ -34,13 +34,23 @@ set LT_ACCESS_KEY="YOUR ACCESS KEY"`
 ### Running Tests
 
 ```
-To run single test
+To run single test (Web Browser Automation)
     $ mvn test -D suite=single.xml
 
-To run parallel test
-
+To run parallel test (Web Browser Automation)
     $ mvn test -D suite=parallel.xml
 
+To run single test (Android App Automation)
+    $ mvn test -D suite=android_single.xml
+    
+To run single test (Android App Automation)
+    $ mvn test -D suite=android_parallel.xml    
+ 
+To run single test (iOS App Automation)
+    $ mvn test -D suite=iOS_single.xml
+    
+To run single test (iOS App Automation)
+    $ mvn test -D suite=iOS_parallel.xml 
 
 ```
 ## About LambdaTest
