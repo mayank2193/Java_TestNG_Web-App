@@ -15,6 +15,7 @@ import io.appium.java_client.ios.IOSElement;
 public class iOS2 {
         public static String username = System.getenv("LT_USERNAME");
         public static String accessKey = System.getenv("LT_ACCESS_KEY");
+        public static String iOS_appurl = System.getenv("iOS_appurl");
 
         @Test
         public void basicTest() throws MalformedURLException, InterruptedException {
@@ -27,7 +28,7 @@ public class iOS2 {
                 capabilities.setCapability("platformVersion", "13.0");
                 capabilities.setCapability("console", true);
                 capabilities.setCapability("visual", true);
-                capabilities.setCapability("app", "<app_url>");
+                capabilities.setCapability("app", iOS_appurl);
 
                 IOSDriver<IOSElement> driver = new IOSDriver<IOSElement>(
                                 new URL("https://" + username + ":" + accessKey + "@beta-hub.lambdatest.com/wd/hub"),
