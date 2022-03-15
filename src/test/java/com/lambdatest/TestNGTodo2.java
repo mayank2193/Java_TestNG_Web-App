@@ -36,6 +36,7 @@ public class TestNGTodo2 {
         caps.setCapability("network", true);
         caps.setCapability("console", true);
         caps.setCapability("networkThrottling", "Regular 4G");
+
         caps.setCapability("commandLog", true);
         caps.setCapability("systemLog", true);
         caps.setCapability("terminal", true);
