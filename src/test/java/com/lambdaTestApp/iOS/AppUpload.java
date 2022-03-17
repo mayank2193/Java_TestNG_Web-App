@@ -27,6 +27,3 @@ public class AppUpload {
         return a;
     }
 }
-
-// String a[] = response.body().string().split(":");
-//System.out.println(a[4]);
