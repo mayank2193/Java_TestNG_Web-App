@@ -8,4 +8,4 @@ tasks:
   - init: mvn install # runs during prebuild
     command:
           npm install # installs package.json
-          echo 'Please check your test on https://automation.lambdatest.com/'
+          
