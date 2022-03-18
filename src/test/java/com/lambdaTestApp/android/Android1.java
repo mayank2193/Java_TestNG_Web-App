@@ -1,5 +1,6 @@
 package com.lambdaTestApp.android;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.net.MalformedURLException;
@@ -13,25 +14,22 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-public class Android1 {
+public class Android1 extends AppUploadAndroid{
 
         String userName = System.getenv("LT_USERNAME") == null ? "Your LT Username" : System.getenv("LT_USERNAME");
         String accessKey = System.getenv("LT_ACCESS_KEY") == null ? "Your LT AccessKey" : System.getenv("LT_ACCESS_KEY");
-        String android_appurl = System.getenv("android_appurl") == null ? "Your android appurl" : System.getenv("android_appurl");
 
         @Test
-        public void basicTest() throws MalformedURLException,
-                        InterruptedException {
+        public void basicTest() throws IOException, InterruptedException {
+                String android_appurl = upload();
                 DesiredCapabilities caps = new DesiredCapabilities();
-
-                caps.setCapability("platformName", "Android");
-                caps.setCapability("deviceName", "Galaxy Tab S4");
-                caps.setCapability("platformVersion", "10");
+                caps.setCapability("deviceName", "Galaxy S21");
                 caps.setCapability("isRealMobile", true);
-                caps.setCapability("project", "App Automation Demo");
+                caps.setCapability("platformVersion","11");
+                caps.setCapability("platformName", "Android");
                 caps.setCapability("build", "Android");
                 caps.setCapability("name", "Single Test");
-                caps.setCapability("app", android_appurl );
+                caps.setCapability("app", android_appurl);
 
                 AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
                                 new URL("https://" + userName + ":" + accessKey + "@beta-hub.lambdatest.com/wd/hub"),
