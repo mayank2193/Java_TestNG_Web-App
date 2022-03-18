@@ -1,5 +1,6 @@
 package com.lambdaTestApp.iOS;
 
+import java.io.IOException;
 import java.net.URL;
 import java.net.MalformedURLException;
 
@@ -12,13 +13,13 @@ import io.appium.java_client.MobileBy;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.IOSElement;
 
-public class iOS2 {
+public class iOS2 extends AppUpload {
         public static String username = System.getenv("LT_USERNAME");
         public static String accessKey = System.getenv("LT_ACCESS_KEY");
-        public static String iOS_appurl = System.getenv("iOS_appurl");
 
         @Test
-        public void basicTest() throws MalformedURLException, InterruptedException {
+        public void basicTest() throws IOException, InterruptedException {
+                String iOS_appurl = upload();
                 DesiredCapabilities capabilities = new DesiredCapabilities();
                 capabilities.setCapability("build", "iOSAppAutomation_LT");
                 capabilities.setCapability("name", "iOS_Test");
