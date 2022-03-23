@@ -9,19 +9,23 @@ import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 
+import org.apache.commons.lang3.ObjectUtils;
+import org.apache.tools.ant.taskdefs.condition.IsFalse;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import java.util.Objects;
 
-public class Android1 extends AppUploadAndroid{
-
+public class Android1 {
+        public static boolean uploaded;
         String userName = System.getenv("LT_USERNAME") == null ? "Your LT Username" : System.getenv("LT_USERNAME");
         String accessKey = System.getenv("LT_ACCESS_KEY") == null ? "Your LT AccessKey" : System.getenv("LT_ACCESS_KEY");
 
         @Test
         public void basicTest() throws IOException, InterruptedException {
-                String android_appurl = upload();
+                AppUploadAndroid.upload();
+
                 DesiredCapabilities caps = new DesiredCapabilities();
                 caps.setCapability("deviceName", "Galaxy S21");
                 caps.setCapability("isRealMobile", true);
@@ -29,7 +33,7 @@ public class Android1 extends AppUploadAndroid{
                 caps.setCapability("platformName", "Android");
                 caps.setCapability("build", "Android");
                 caps.setCapability("name", "Single Test");
-                caps.setCapability("app", android_appurl);
+                caps.setCapability("app", "android_appurl");
 
                 AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
                                 new URL("https://" + userName + ":" + accessKey + "@beta-hub.lambdatest.com/wd/hub"),

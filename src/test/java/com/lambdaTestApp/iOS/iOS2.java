@@ -19,17 +19,17 @@ public class iOS2 extends AppUpload {
 
         @Test
         public void basicTest() throws IOException, InterruptedException {
-                String iOS_appurl = upload();
+                AppUpload.upload1();
                 DesiredCapabilities capabilities = new DesiredCapabilities();
                 capabilities.setCapability("build", "iOSAppAutomation_LT");
                 capabilities.setCapability("name", "iOS_Test");
                 capabilities.setCapability("platformName", "iOS");
-                capabilities.setCapability("deviceName", "iPhone 11");
+                capabilities.setCapability("deviceName", "iPhone 8");
                 capabilities.setCapability("isRealMobile", true);
                 capabilities.setCapability("platformVersion", "13.0");
                 capabilities.setCapability("console", true);
                 capabilities.setCapability("visual", true);
-                capabilities.setCapability("app", iOS_appurl);
+                capabilities.setCapability("app", "iOS_appurl");
 
                 IOSDriver<IOSElement> driver = new IOSDriver<IOSElement>(
                                 new URL("https://" + username + ":" + accessKey + "@beta-hub.lambdatest.com/wd/hub"),
