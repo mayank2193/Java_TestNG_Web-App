@@ -21,7 +21,7 @@ public class Android1 extends AppUploadAndroid{
 
         @Test
         public void basicTest() throws IOException, InterruptedException {
-                String android_appurl = upload();
+                upload();
                 DesiredCapabilities caps = new DesiredCapabilities();
                 caps.setCapability("deviceName", "Galaxy S21");
                 caps.setCapability("isRealMobile", true);
