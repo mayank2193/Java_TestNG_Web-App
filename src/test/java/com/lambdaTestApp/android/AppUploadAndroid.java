@@ -9,7 +9,7 @@ public class AppUploadAndroid {
     public static String userName = System.getenv("LT_USERNAME");
      public static String accessKey = System.getenv("LT_ACCESS_KEY");
 
-    public String upload() throws IOException {
+    public void upload() throws IOException {
 
         String credential = Credentials.basic(userName, accessKey);
         OkHttpClient client = new OkHttpClient().newBuilder()
@@ -19,6 +19,7 @@ public class AppUploadAndroid {
                 .addFormDataPart("appFile","apps/WikipediaSample.apk",
                         RequestBody.create(MediaType.parse("application/octet-stream"),
                                 new File("apps/WikipediaSample.apk")))
+                        .addFormDataPart("custom_id","android_appurl")
                 .build();
         Request request = new Request.Builder()
                 .url("https://manual-api.lambdatest.com/app/upload/realDevice")
@@ -29,6 +30,7 @@ public class AppUploadAndroid {
         System.out.println(credential);
         String a = response.body().string().substring(96,127);
         System.out.println(a);
-        return a;
+        System.out.println("Android App Uploaded Successfully!!!");
+
     }
 }

@@ -22,7 +22,7 @@ public class Android2 extends AppUploadAndroid {
         @Test
         public void basicTest() throws IOException,
                 InterruptedException {
-                String android_appurl = upload();
+                 upload();
                 DesiredCapabilities caps = new DesiredCapabilities();
                 caps.setCapability("platformName", "Android");
                 caps.setCapability("deviceName", "Google Pixel 4");
@@ -30,7 +30,7 @@ public class Android2 extends AppUploadAndroid {
                 caps.setCapability("isRealMobile", true);
                 caps.setCapability("build", "Android");
                 caps.setCapability("name", "Single Test");
-                caps.setCapability("app", android_appurl);
+                caps.setCapability("app", "android_appurl");
 
                 AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
                                 new URL("https://" + userName + ":" + accessKey + "@beta-hub.lambdatest.com/wd/hub"),

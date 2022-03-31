@@ -19,7 +19,7 @@ public class iOS1 extends AppUpload {
 
         @Test
         public void basicTest() throws IOException, InterruptedException {
-                String iOS_appurl = upload();
+                 upload();
                 DesiredCapabilities capabilities = new DesiredCapabilities();
                 capabilities.setCapability("build", "iOSAppAutomation_LT");
                 capabilities.setCapability("name", "iOS_Test");
@@ -29,7 +29,7 @@ public class iOS1 extends AppUpload {
                 capabilities.setCapability("platformVersion", "15.0");
                 capabilities.setCapability("console", true);
                 capabilities.setCapability("visual", true);
-                capabilities.setCapability("app", iOS_appurl);
+                capabilities.setCapability("app", "iOS_appurl");
 
                 IOSDriver<IOSElement> driver = new IOSDriver<IOSElement>(
                                 new URL("https://" + username + ":" + accessKey + "@beta-hub.lambdatest.com/wd/hub"),
