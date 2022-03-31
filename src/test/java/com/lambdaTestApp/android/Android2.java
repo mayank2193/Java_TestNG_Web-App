@@ -22,7 +22,7 @@ public class Android2 extends AppUploadAndroid {
         @Test
         public void basicTest() throws IOException,
                 InterruptedException {
-                String android_appurl = upload();
+                upload();
                 DesiredCapabilities caps = new DesiredCapabilities();
                 caps.setCapability("platformName", "Android");
                 caps.setCapability("deviceName", "Google Pixel 4");
