@@ -19,7 +19,7 @@ public class iOS1 extends AppUpload {
 
         @Test
         public void basicTest() throws IOException, InterruptedException {
-                upload();
+                upload1();
                 DesiredCapabilities capabilities = new DesiredCapabilities();
                 capabilities.setCapability("build", "iOSAppAutomation_LT");
                 capabilities.setCapability("name", "iOS_Test");
