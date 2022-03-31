@@ -9,7 +9,7 @@ public class AppUploadAndroid {
     public static String userName = System.getenv("LT_USERNAME");
      public static String accessKey = System.getenv("LT_ACCESS_KEY");
 
-    public String upload() throws IOException {
+    public static void upload() throws IOException {
 
         String credential = Credentials.basic(userName, accessKey);
 
