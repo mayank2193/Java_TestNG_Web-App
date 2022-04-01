@@ -16,6 +16,7 @@ import io.appium.java_client.ios.IOSElement;
 public class iOS2 extends AppUpload {
         public static String username = System.getenv("LT_USERNAME");
         public static String accessKey = System.getenv("LT_ACCESS_KEY");
+        private String Status = "failed";  
 
         @Test
         public void basicTest() throws IOException, InterruptedException {
@@ -70,7 +71,8 @@ public class iOS2 extends AppUpload {
                 IOSElement Checkbox6 = (IOSElement) new WebDriverWait(driver, 30).until(
                                 ExpectedConditions.elementToBeClickable(MobileBy.AccessibilityId("add")));
                 Checkbox6.click();
-
+                Status = "passed";
+                driver.executeScript("lambda-status=" + Status);
                 // The driver.quit statement is required, otherwise the test continues to
                 // execute, leading to a timeout.
                 driver.quit();

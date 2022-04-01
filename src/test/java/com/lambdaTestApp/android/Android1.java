@@ -18,7 +18,7 @@ public class Android1 extends AppUploadAndroid{
 
         String userName = System.getenv("LT_USERNAME") == null ? "Your LT Username" : System.getenv("LT_USERNAME");
         String accessKey = System.getenv("LT_ACCESS_KEY") == null ? "Your LT AccessKey" : System.getenv("LT_ACCESS_KEY");
-
+        private String Status = "failed";        
         @Test
         public void basicTest() throws IOException, InterruptedException {
                 upload();
@@ -48,8 +48,11 @@ public class Android1 extends AppUploadAndroid{
                 List<AndroidElement> allProductsName = driver.findElementsByClassName("android.widget.TextView");
                 assert (allProductsName.size() > 0);
 
+                Status = "passed";
+                driver.executeScript("lambda-status=" + Status);
                 // The driver.quit statement is required, otherwise the test continues to
-                // execute, leading to a timeout.
+            // execute, leading to a timeout.
                 driver.quit();
+                
         }
 }
