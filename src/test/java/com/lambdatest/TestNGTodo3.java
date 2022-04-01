@@ -65,7 +65,7 @@ public class TestNGTodo3 {
         driver.findElement(By.name("li3")).click();
 
         System.out.println("Checking Another Box");
-        driver.findElement(By.name("li4")).click();
+        driver.findElement(By.name("li45")).click();
 
         driver.findElement(By.id("sampletodotext")).sendKeys(" List Item 6");
         driver.findElement(By.id("addbutton")).click();
@@ -99,7 +99,7 @@ public class TestNGTodo3 {
         // Let's also assert that the todo we added is present in the list.
 
         spanText = driver.findElementByXPath("/html/body/div/div/div/ul/li[9]/span").getText();
-        Assert.assertEquals("Get Taste of Lambda and Stick to It", spanText);
+        Assert.assertEquals("Get Taste of Lambda and Sticiuk to It", spanText);
         Status = "passed";
         Thread.sleep(800);
 
