@@ -24,13 +24,15 @@ public class Android2 {
                 DesiredCapabilities caps = new DesiredCapabilities();
 
                 caps.setCapability("platformName", "Android");
-                caps.setCapability("deviceName", "Google Pixel 4");
-                caps.setCapability("platformVersion", "11");
+                caps.setCapability("deviceName", "OnePlus 6T");
+                caps.setCapability("platformVersion", "9");
                 caps.setCapability("isRealMobile", true);
                 caps.setCapability("project", "App Automation Demo");
                 caps.setCapability("build", "Android");
                 caps.setCapability("name", "Single Test");
-                caps.setCapability("app", "<app_url>");
+                caps.setCapability("visual",true);
+                caps.setCapability("devicelog",true);
+                caps.setCapability("app", "lt://APP10020521642426864932379");
 
                 AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
                                 new URL("https://" + userName + ":" + accessKey + "@beta-hub.lambdatest.com/wd/hub"),

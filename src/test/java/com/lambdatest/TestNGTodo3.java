@@ -27,11 +27,15 @@ public class TestNGTodo3 {
 
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("platform", "MacOS Catalina");
-        caps.setCapability("browserName", "Chrome");
+        caps.setCapability("browserName", "firefox");
         caps.setCapability("version", "latest");
         caps.setCapability("build", "TestNG With Java");
         caps.setCapability("name", m.getName() + this.getClass().getName());
         caps.setCapability("plugin", "git-testng");
+        caps.setCapability("visual",true);
+        caps.setCapability("performance", true);
+        caps.setCapability("network", true);
+        caps.setCapability("console", true);
 
         String[] Tags = new String[] { "Feature", "Tag", "Moderate" };
         caps.setCapability("tags", Tags);

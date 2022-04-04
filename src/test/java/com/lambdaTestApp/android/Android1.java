@@ -23,14 +23,30 @@ public class Android1 {
                         InterruptedException {
                 DesiredCapabilities caps = new DesiredCapabilities();
 
+                // DesiredCapabilities capabilities = new DesiredCapabilities();
+                //         Map<String,Object> caps = new HashMap<>();
+                //         caps.put("app","lambda1");
+                //         caps.put("isRealMobile",true);
+                //         caps.put("deviceName","iPhone 11");
+                //         caps.put("devicelog",true);
+                //         caps.put("network",true);
+                //         caps.put("visual",true);
+                //         caps.put("platformName","ios");
+                //         caps.put("eventTimings",true);
+                //         caps.put("platformVersion","14");
+                //         caps.put("w3c",true);
+                //         capabilities.setCapability("lt:options",caps);
+
                 caps.setCapability("platformName", "Android");
-                caps.setCapability("deviceName", "Galaxy Tab S4");
+                caps.setCapability("deviceName", "Galaxy S9");
                 caps.setCapability("platformVersion", "10");
                 caps.setCapability("isRealMobile", true);
                 caps.setCapability("project", "App Automation Demo");
                 caps.setCapability("build", "Android");
                 caps.setCapability("name", "Single Test");
-                caps.setCapability("app", "<app_url>");
+	        caps.setCapability("visual",true);
+                caps.setCapability("devicelog",true);
+                caps.setCapability("app", "lambda1");
 
                 AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
                                 new URL("https://" + userName + ":" + accessKey + "@beta-hub.lambdatest.com/wd/hub"),

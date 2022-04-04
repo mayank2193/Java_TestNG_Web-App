@@ -25,9 +25,9 @@ public class iOS1 {
                 capabilities.setCapability("deviceName", "iPhone 13 Mini");
                 capabilities.setCapability("isRealMobile", true);
                 capabilities.setCapability("platformVersion", "15.0");
-                capabilities.setCapability("console", true);
                 capabilities.setCapability("visual", true);
-                capabilities.setCapability("app", "<app_url>");
+                capabilities.setCapability("devicelog",true);
+                capabilities.setCapability("app", "lt://APP10020521642428466273822");
 
                 IOSDriver<IOSElement> driver = new IOSDriver<IOSElement>(
                                 new URL("https://" + username + ":" + accessKey + "@beta-hub.lambdatest.com/wd/hub"),

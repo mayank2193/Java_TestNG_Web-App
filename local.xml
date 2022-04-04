@@ -3,8 +3,7 @@
 <suite thread-count="5" parallel="tests" name="Suite">
   <test thread-count="5" parallel="classes" name="Test">
     <classes>
-      <class name="com.lambdatest.TestNGTodo2"/>
-    
+      <class name="com.lambdatest.TestNGTodoLocal"/>
      
     </classes>
   </test> <!-- Test -->
