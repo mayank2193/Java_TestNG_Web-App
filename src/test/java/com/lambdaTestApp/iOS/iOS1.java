@@ -15,6 +15,7 @@ import io.appium.java_client.ios.IOSElement;
 public class iOS1 {
         public static String username = System.getenv("LT_USERNAME");
         public static String accessKey = System.getenv("LT_ACCESS_KEY");
+        public static String iOS_appurl = System.getenv("iOS_appurl");
 
         @Test
         public void basicTest() throws MalformedURLException, InterruptedException {
@@ -26,8 +27,12 @@ public class iOS1 {
                 capabilities.setCapability("isRealMobile", true);
                 capabilities.setCapability("platformVersion", "15.0");
                 capabilities.setCapability("visual", true);
+<<<<<<< HEAD
                 capabilities.setCapability("devicelog",true);
                 capabilities.setCapability("app", "lt://APP10020521642428466273822");
+=======
+                capabilities.setCapability("app", iOS_appurl);
+>>>>>>> 910c5909aa17e911af691826394760ed9441f4c0
 
                 IOSDriver<IOSElement> driver = new IOSDriver<IOSElement>(
                                 new URL("https://" + username + ":" + accessKey + "@beta-hub.lambdatest.com/wd/hub"),

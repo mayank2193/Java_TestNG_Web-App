@@ -17,6 +17,7 @@ public class Android1 {
 
         String userName = System.getenv("LT_USERNAME") == null ? "Your LT Username" : System.getenv("LT_USERNAME");
         String accessKey = System.getenv("LT_ACCESS_KEY") == null ? "Your LT AccessKey" : System.getenv("LT_ACCESS_KEY");
+        String android_appurl = System.getenv("android_appurl") == null ? "Your android appurl" : System.getenv("android_appurl");
 
         @Test
         public void basicTest() throws MalformedURLException,
@@ -44,9 +45,13 @@ public class Android1 {
                 caps.setCapability("project", "App Automation Demo");
                 caps.setCapability("build", "Android");
                 caps.setCapability("name", "Single Test");
+<<<<<<< HEAD
 	        caps.setCapability("visual",true);
                 caps.setCapability("devicelog",true);
                 caps.setCapability("app", "lambda1");
+=======
+                caps.setCapability("app", android_appurl );
+>>>>>>> 910c5909aa17e911af691826394760ed9441f4c0
 
                 AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
                                 new URL("https://" + userName + ":" + accessKey + "@beta-hub.lambdatest.com/wd/hub"),
