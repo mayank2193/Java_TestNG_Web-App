@@ -27,7 +27,7 @@ jobs:
         LT_USERNAME: mayankmaurya
         LT_ACCESS_KEY: gNUXYEyteCixY7PQQNWUj6AXgUAwxZzRzfnWFFsn37FK7JZM1H
         ## Reference your environment variables
-        run: echo "The API key is:${{env.LT_USERNAME}}"  
+      run: echo "The API key is:${{env.LT_USERNAME}}"  
     - name: Build with Maven and run
       run: mvn install -Dsuite=parallel.xml
  
