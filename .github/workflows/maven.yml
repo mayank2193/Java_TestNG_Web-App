@@ -24,9 +24,8 @@ jobs:
         cache: maven
     - name: ENV setting
       env:
-        LT_USERNAME: ${{ secrets.LT_USERNAME }}
-        LT_ACCESS_KEY: ${{ secrets.LT_ACCESS_KEY }}
-      run: export LT_USERNAME=mayankmaurya LT_ACCESS_KEY=gNUXYEyteCixY7PQQNWUj6AXgUAwxZzRzfnWFFsn37FK7JZM1H
+        LT_USERNAME: mayankmaurya
+        LT_ACCESS_KEY: gNUXYEyteCixY7PQQNWUj6AXgUAwxZzRzfnWFFsn37FK7JZM1H
     - name: Build with Maven and run
       run: mvn install -Dsuite=parallel.xml
  
