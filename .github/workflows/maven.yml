@@ -22,9 +22,11 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
-    - name: ENV echo
-      ## Reference your environment variables
-      run: echo "The ENV key is:${{secrets.LT_USERNAME}}"    
+    - name: ENV setting
+      env:
+        LT_USERNAME: ${{ env.LT_USERNAME }}
+        LT_ACCESS_KEY: ${{ env.LT_ACCESS_KEY }}
+      run: export LT_USERNAME=${{ env.LT_USERNAME }} LT_ACCESS_KEY=${{ env.LT_ACCESS_KEY }}
     - name: Build with Maven and run
       run: mvn install -Dsuite=parallel.xml
  
