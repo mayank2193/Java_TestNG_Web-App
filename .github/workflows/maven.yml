@@ -22,7 +22,6 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
-    - name: Build with Maven
-      run: mvn -B package --file pom.xml
-    - name: Test Run
-      run: mvn test -D suite=single.xml
+    - name: Build with Maven and run
+      run: mvn install -Dsuite=parallel.xml
+ 
