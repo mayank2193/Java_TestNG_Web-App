@@ -40,18 +40,6 @@ To run single test (Web Browser Automation)
 To run parallel test (Web Browser Automation)
     $ mvn test -D suite=parallel.xml
 
-To run single test (Android App Automation)
-    $ mvn test -D suite=android_single.xml
-    
-To run single test (Android App Automation)
-    $ mvn test -D suite=android_parallel.xml    
- 
-To run single test (iOS App Automation)
-    $ mvn test -D suite=iOS_single.xml
-    
-To run single test (iOS App Automation)
-    $ mvn test -D suite=iOS_parallel.xml 
-
 ```
 ## About LambdaTest
 
